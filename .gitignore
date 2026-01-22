@@ -1,0 +1,14 @@
+﻿# datasets (too large for git)
+data/raw/
+dataset/images/
+
+# python cache
+__pycache__/
+*.pyc
+
+# virtual env
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
