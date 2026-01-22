@@ -1,6 +1,7 @@
 Overview
 
-This project converts the SCUT-HEAD Part B dataset from its original XML annotation format into the COCO object detection format.
+This project converts the SCUT-HEAD Part B dataset from its original XML annotation format into the COCO object detection 
+format.
 
 The pipeline includes:
 
@@ -14,9 +15,8 @@ PyTorch-compatible dataset loader
 
 Visualization for sanity checking
 
-The entire workflow is runnable locally in VS Code and is suitable for production-level research or industry use.
-
 Dataset Source
+
 SCUT-HEAD Dataset
 
 The SCUT-HEAD dataset is a public head-detection dataset containing crowd images.
@@ -25,51 +25,75 @@ Each image is annotated using Pascal VOC XML format.
 
 Annotations contain bounding boxes for human heads.
 
-Original dataset structure:
-
-SCUT_HEAD_Part_B/
-├── JPEGImages/     # Images (.jpg)
-└── Annotations/    # XML annotations (.xml)
-
+Scut-Head Dataset : https://www.kaggle.com/datasets/hoangxuanviet/scut-head
 
 ⚠️ Note:
+
 Due to dataset size and licensing constraints, raw images are not pushed to GitHub.
 Users must download the dataset separately and place it in the correct directory.
 
 Project Structure
+
 head-detection-coco/
+
 ├── scripts/
+
 │   ├── scut_to_coco.py        # XML → COCO conversion
+
 │   ├── split_coco.py          # Train / validation split
+
 │   └── visualize_sample.py   # Visualization & sanity check
+
 │
+
 ├── datasets/
+
 │   └── coco_dataset.py       # Reusable PyTorch Dataset class
+
 │
+
 ├── data/
+
 │   ├── raw/
+
 │   │   └── SCUT_HEAD_Part_B/
+
 │   │       ├── JPEGImages/
+
 │   │       └── Annotations/
+
 │   │
+
 │   └── coco/
+
 │       ├── scut_head_partB_coco.json
+
 │       ├── annotations/
+
 │       └── images/
+
 │           ├── train2017/
+
 │           └── val2017/
+
 │
 ├── requirements.txt
+
 ├── .gitignore
+
 └── README.md
 
+
 Pipeline
+
 --> Dataset Placement
 
 After downloading and extracting SCUT_HEAD_Part_B, place it as follows:
 
 data/raw/SCUT_HEAD_Part_B/
+
 ├── JPEGImages/
+
 └── Annotations/
 
 
@@ -110,14 +134,18 @@ data/coco/scut_head_partB_coco.json
 Example console output:
 
 📸 Found 2405 images
+
 ✅ SCUT → COCO conversion completed
+
 Images processed     : 2405
+
 Annotations created  : ~43,930
+
 Images skipped       : 0
 
 --> Train / Validation Split
 
-Script:
+Script :
 
 python scripts/split_coco.py
 
@@ -135,6 +163,7 @@ Validation set
 Copies images into:
 
 data/coco/images/train2017/
+
 data/coco/images/val2017/
 
 
@@ -143,7 +172,6 @@ Writes corresponding annotation files into:
 data/coco/annotations/
 
 
-This structure is fully compatible with standard COCO training pipelines.
 
 --> PyTorch Dataset Loader
 
@@ -195,7 +223,9 @@ Detects data corruption early
 This step ensures data quality before training.
 
 Environment Setup
+
 Install Dependencies
+
 pip install -r requirements.txt
 
 
@@ -213,11 +243,6 @@ opencv-python
 
 matplotlib
 
-Why This Structure (Manager Explanation)
-
-Prototyping was initially done in Colab for speed
-
-Code was refactored into a clean, modular project
 
 Each responsibility is isolated:
 
@@ -229,25 +254,16 @@ Loading
 
 Visualization
 
-Repository is lightweight and reproducible
-
-Raw data excluded via .gitignore
-
-Summary
+--> Summary
 
 Dataset: SCUT-HEAD Part B
 
-Task: Head detection
-
+Task: SCUT-HEAD Part B dataset from its original XML annotation format into the COCO format
+ 
 Format: COCO
 
 Images: 2405
 
 Annotations: ~43k
 
-Ready for: Training object detection models
 
-How to Run Everything (Quick Start)
-python scripts/scut_to_coco.py
-python scripts/split_coco.py
-python scripts/visualize_sample.py
