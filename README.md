@@ -2,8 +2,7 @@
 
 ## Overview
 This repository provides a reproducible pipeline to convert the
-SCUT-HEAD Part-B dataset from XML annotations into COCO format and
-prepare it for training head-detection models.
+SCUT-HEAD Part-B dataset from XML annotations into COCO format.
 
 ## Dataset
 - Source: SCUT-HEAD Part-B
@@ -16,3 +15,4 @@ prepare it for training head-detection models.
 3. Organize data in COCO-2017 structure
 
 ## Folder Structure
+
