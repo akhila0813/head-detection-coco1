@@ -1,6 +1,7 @@
 # Head Detection Dataset (SCUT-HEAD → COCO)
 ## Overview
 This project converts the **SCUT-HEAD Part B** dataset from its original XML annotation format into the **COCO** object detection format.
+
 The pipeline includes:
 - Dataset organization
 - XML → COCO conversion
@@ -96,6 +97,7 @@ python scripts/visualize_sample.py
 1. A window will open showing a image with annottaions.
 2. Verify that **Green Boxes** accurately surround the heads in the image.
 3. Press any key to close the window.
+
 
 
 
