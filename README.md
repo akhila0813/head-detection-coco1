@@ -13,7 +13,8 @@ The SCUT-HEAD dataset is a public head-detection dataset containing crowd images
 - Each image is annotated using Pascal VOC XML format.
 - Annotations contain bounding boxes for human heads.
 - [Scut-Head Dataset on Kaggle](https://www.kaggle.com/datasets/hoangxuanviet/scut-head)
-> ⚠️ **Note**: Due to dataset size and licensing constraints, raw images are not pushed to GitHub. Users must download the dataset separately and place it in the correct directory.
+> ⚠️ **Note**:Due to dataset size and licensing constraints, raw images are not included in this repository.
+After downloading SCUT-HEAD Part-B, place it under data/raw/SCUT_HEAD_Part_B/ so that all scripts can locate the dataset automatically.
 ## Project Structure
 ```
 head-detection-coco/
@@ -95,3 +96,4 @@ python scripts/visualize_sample.py
 1. A window will open showing a random image.
 2. Verify that **Green Boxes** accurately surround the heads in the image.
 3. Press any key to close the window.
+
