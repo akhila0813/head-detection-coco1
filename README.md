@@ -93,7 +93,8 @@ Before training, **always** verify your data is correct.
 python scripts/visualize_sample.py
 ```
 **Action:**
-1. A window will open showing a random image.
+1. A window will open showing a image with annottaions.
 2. Verify that **Green Boxes** accurately surround the heads in the image.
 3. Press any key to close the window.
+
 
